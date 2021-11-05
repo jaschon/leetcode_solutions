@@ -1,4 +1,4 @@
-# leetcode_solutions
+# Solutions
 Solutions to Problems on Leetcode
 
 https://leetcode.com/problemset/all/
