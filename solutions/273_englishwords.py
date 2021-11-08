@@ -15,21 +15,26 @@ def int2english(s=""):
     digits = [s[i:i + 3][::-1] for i in range(0, len(s), 3)][::-1]
     result = []
     for i, d in enumerate(digits):
+        if d == "000": continue
         if d == "0":
             result.append("Zero")
-        elif int(d) > 99:
+            continue
+        if int(d) > 99:
             result.append(ONES[int(d[0])])
             result.append(HUNDREDS[1])
-            result.append(TENS[int(d[1])])
-            result.append(ONES[int(d[2])])
+            if int(d[1:]) < 21: #fix special cases
+                result.append(ONES[int(d[1:])])
+            else:
+                result.append(TENS[int(d[1])])
+                result.append(ONES[int(d[2])])
         elif int(d) > 21:
             result.append(TENS[int(d[0])])
             result.append(ONES[int(d[1])])
         else:
             result.append(ONES[int(d)])
-        if d != digits[-1] and len(digits) > 1:
+        if len(digits) > 1 and i != (len(digits)-1):
             result.append(HUNDREDS[len(digits)-i])
-    return " ".join(result).replace("  "," ")
+    return " ".join(result).replace("   "," ").replace("  ", " ").rstrip()
 
 
 if __name__ == "__main__":
@@ -47,9 +52,24 @@ if __name__ == "__main__":
             (1234567, "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"),
             (1234567891, "One Billion Two Hundred Thirty Four Million "
                 "Five Hundred Sixty Seven Thousand Eight Hundred Ninety One"),
+            (1_001, "One Thousand One"),
+            (100_000, "One Hundred Thousand"),
+            (100_001, "One Hundred Thousand One"),
+            (100_011, "One Hundred Thousand Eleven"),
+            (100_100, "One Hundred Thousand One Hundred"),
+            (101_010, "One Hundred One Thousand Ten"),
+            (1_000_000_001, "One Billion One"),
+            (10_000_000_001, "Ten Billion One"),
+            (100000000001, "One Hundred Billion One"),
+            (1000000000001, "One Trillion One"),
+            (10_000_100_000_001, "Ten Trillion One Hundred Million One"),
+            (999_000_900_000_011, "Nine Hundred Ninety Nine Trillion Nine Hundred Million Eleven"),
+            (99_999_000_900_000_011, "Ninety Nine Quadrillion Nine Hundred Ninety Nine Trillion "
+                "Nine Hundred Million Eleven"),
+            (112_112_112_112_112_112, "One Hundred Twelve Quadrillion "
+                "One Hundred Twelve Trillion One Hundred Twelve Billion "
+                "One Hundred Twelve Million One Hundred Twelve Thousand One Hundred Twelve"),
             ):
 
-        print(ex[0], funct(ex[0]), "--", \
-                ex[1] == funct(ex[0])
-            )
+        print(ex[0], funct(ex[0]), "--", ex[1] == funct(ex[0]))
 
