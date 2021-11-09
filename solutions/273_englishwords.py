@@ -3,12 +3,15 @@
 # https://leetcode.com/problems/integer-to-english-words/
 # HARD
 
+import sys
+
 ONES = ("", "One", "Two", "Three", "Four", "Five", \
         "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen",
         "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty")
 TENS = ("", "Ten", "Twenty", "Thirty", "Forty", "Fifthy", \
         "Sixty", "Seventy", "Eighty", "Ninety", "Hundred")
-HUNDREDS = ("", "Hundred", "Thousand", "Million", "Billion", "Trillion", "Quadrillion")
+HUNDREDS = ("", "Hundred", "Thousand", "Million", "Billion", "Trillion", 
+        "Quadrillion", "Quintillion")
 
 def int2english(s=""):
     s = str(s)[::-1]
@@ -22,16 +25,12 @@ def int2english(s=""):
         if int(d) > 99:
             result.append(ONES[int(d[0])])
             result.append(HUNDREDS[1])
-            if int(d[1:]) < 21: #fix special cases
-                result.append(ONES[int(d[1:])])
-            else:
-                result.append(TENS[int(d[1])])
-                result.append(ONES[int(d[2])])
-        elif int(d) > 21:
+            d = d[1:]
+        if int(d) < 21:
+            result.append(ONES[int(d)])
+        else:
             result.append(TENS[int(d[0])])
             result.append(ONES[int(d[1])])
-        else:
-            result.append(ONES[int(d)])
         if len(digits) > 1 and i != (len(digits)-1):
             result.append(HUNDREDS[len(digits)-i])
     return " ".join(result).replace("   "," ").replace("  ", " ").rstrip()
@@ -73,3 +72,5 @@ if __name__ == "__main__":
 
         print(ex[0], funct(ex[0]), "--", ex[1] == funct(ex[0]))
 
+   
+    print("\nSYSTEM MAX SIZE:", funct(sys.maxsize), "\n")
