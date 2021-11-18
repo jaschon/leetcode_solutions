@@ -2,11 +2,15 @@
 # https://leetcode.com/problems/valid-sudoku/
 # 36. Valid Sudoku
 # Medium
+# Accepted!
+# https://leetcode.com/submissions/detail/589219916/
+# 116ms (29.32%)
+# 14.3MB (43.05%)
 
-class CheckSudoku:
-
-    def __init__(self, board=[]):
+class Solution:
+    def isValidSudoku(self, board):
         self.board = board
+        return self.check()
 
     def check(self):
         return all((self.check_rows(), self.check_cols(), self.check_boxes()))
@@ -53,6 +57,7 @@ class CheckSudoku:
                     return False
         return True
 
+
 if __name__ == "__main__":
 
     for ex in (
@@ -80,11 +85,8 @@ if __name__ == "__main__":
         ,[".",".",".",".","8",".",".","7","9"]
         ], False),
         ):
-            c = CheckSudoku(ex[0])
-            print("check rows", c.check_rows())
-            print("check cols", c.check_cols())
-            print("check boxes", c.check_boxes())
-            print("is valid?", c.check())
-            print("pass test?", ex[1] == c.check())
+            c = Solution().isValidSudoku(ex[0])
+            print("is valid?", c)
+            print("pass test?", ex[1] == c)
             print()
 

@@ -2,6 +2,10 @@
 # 125. Valid Palindrome
 # https://leetcode.com/problems/valid-palindrome/
 # EASY
+# Accepted!
+# https://leetcode.com/submissions/detail/589197648/
+# 40ms (90.49%)
+# 15.4 (30.29%)
 
 # APL VERSION
 # s ← 'A man, a plan, a canal: Panama'
@@ -11,17 +15,17 @@
 
 import re
 
-def is_palindrome(s=[]):
-    s = re.sub(r'[^A-Za-z0-9]+', "", s).lower()
-    return s == s[::-1]
+class Solution:
+    def isPalindrome(self, s=[]):
+        s = re.sub(r'[^A-Za-z0-9]+', "", s).lower()
+        return s == s[::-1]
 
 if __name__ == "__main__":
-    funct = is_palindrome
     for example in (
             (" ", True),
             ("tacocat!", True),
             ("race a car", False),
             ("A man, a plan, a canal: Panama", True),
         ):
-
-        print(example[0], funct(example[0]), "=", example[1])
+        s = Solution()
+        print(example[0], s.isPalindrome(example[0]), "=", example[1])

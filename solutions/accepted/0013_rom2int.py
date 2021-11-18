@@ -2,6 +2,10 @@
 # 13. Roman to Integer
 # https://leetcode.com/problems/roman-to-integer/
 # EASY
+# Accepted!
+# https://leetcode.com/submissions/detail/589165642/
+# 44m3 (85.25% faster)
+# 14.1mb
 
 from collections import deque
 
@@ -21,24 +25,22 @@ FIX = {
         'C' : 'DM',
         }
 
-
-def rom2int(s=""):
-    digits = deque(list(zip(*s))[0])
-    total = 0
-    while digits:
-        d1 = digits.popleft()
-        if digits and d1 in FIX:
-            d2 = digits.popleft()
-            if d2 in FIX.get(d1,""):
-                total += (ROM.get(d2, 0) - ROM.get(d1, 0))
+class Solution:
+    def romanToInt(self, s=""):
+        digits = deque(list(zip(*s))[0])
+        total = 0
+        while digits:
+            d1 = digits.popleft()
+            if digits and d1 in FIX:
+                d2 = digits.popleft()
+                if d2 in FIX.get(d1,""):
+                    total += (ROM.get(d2, 0) - ROM.get(d1, 0))
+                else:
+                    total += ROM.get(d1, 0)
+                    digits.appendleft(d2)
             else:
                 total += ROM.get(d1, 0)
-                digits.appendleft(d2)
-        else:
-            total += ROM.get(d1, 0)
-    return total
-
-
+        return total
 
 if __name__ == "__main__":
 
@@ -67,9 +69,10 @@ if __name__ == "__main__":
             ("this should fail!", 0),
             ):
 
+        s = Solution()
         print(example[0], "::", \
-                rom2int(example[0]), "=", example[1], \
-                rom2int(example[0]) == example[1]
+                s.romanToInt(example[0]), "=", example[1], \
+                s.romanToInt(example[0]) == example[1]
                 )
 
 

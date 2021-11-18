@@ -3,6 +3,8 @@
 # https://leetcode.com/problems/longest-substring-without-repeating-characters/
 # Medium
 
+# FAIL! Time Limit!!!
+
 from collections import Counter
 
 def lensub(s=""):

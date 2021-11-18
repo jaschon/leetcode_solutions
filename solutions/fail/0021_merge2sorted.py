@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 #21. Merge Two Sorted Lists
 # EASY
+# https://leetcode.com/problems/merge-two-sorted-lists/
+
+
+#WRONG! USE linked lists, not python lists!!!!!!!
 
 from collections import deque
 
