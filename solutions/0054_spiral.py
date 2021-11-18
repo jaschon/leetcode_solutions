@@ -7,28 +7,18 @@ def spiral(matrix):
     result = []
     x, y, d = 0, 0, 'r'
     w, h = len(matrix[0]), len(matrix)
-    direction = { 'r' : (1, 0), 'd' : (0, 1), 'l': (-1, 0), 'u': (0, -1) }
+    #default direction add 0-1 index. direction change values 2-4 index 
+    pos = { 'r' : (1, 0, -1, 1, 'd'), 'd' : (0, 1, -1, -1, 'l'), 'l': (-1, 0, 1, -1, 'u'), 'u': (0, -1, 1,1,'r') }
     while matrix[y][x]:
         result.append(matrix[y][x])
         matrix[y][x] = ""
-        x += direction[d][0]
-        y += direction[d][1]
-        if (x < w and d == 'r' and not matrix[y][x]) or x == w:
-            x -= 1
-            y += 1
-            d = 'd'
-        elif (y < h and d == 'd' and not matrix[y][x]) or y == h:
-            y -= 1
-            x -= 1
-            d = 'l'
-        elif (x > -1 and d == 'l' and not matrix[y][x]) or x == -1:
-            x += 1
-            y -= 1
-            d = 'u'
-        elif d == 'u' and not matrix[y][x]:
-            y += 1
-            x += 1
-            d = 'r'
+        x += pos[d][0]
+        y += pos[d][1]
+        #check for direction change. use index 2-4
+        if (x>= w or x<0 or y>=h or y<0 or not matrix[y][x]):
+            x += pos[d][2]
+            y += pos[d][3]
+            d = pos[d][4]
     return result
 
 if __name__ == "__main__":
