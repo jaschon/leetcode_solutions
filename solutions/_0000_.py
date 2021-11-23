@@ -4,15 +4,15 @@
 #
 
 class Solution(object):
-    pass
+    def 
 
 
 if __name__ == "__main__":
-    funct = Solution().funct
     for ex in (
 
             ):
-        result = funct(ex[0])
+        result = Solution().
+        # print(ex[0], ex[1], result, "PASS" if result == ex[2] else "FAIL")
         print(ex[0], result, "PASS" if result == ex[1] else "FAIL")
 
 
