@@ -2,22 +2,24 @@
 # 5. Longest Palindromic Substring
 # https://leetcode.com/problems/longest-palindromic-substring/
 # Medium
-
-# FAIL Time Limit!
+# Accepted!
+# https://leetcode.com/problems/longest-palindromic-substring/submissions/
+# 5148ms (21.37%)
+# 14.4 MB (35.95%)
 
 class Solution:
     def longestPalindrome(self, s=""):
-        results = []
         longest = 0
-        for i1 in range(len(s)+1):
-            for i2 in range(i1,len(s)+1):
-                sub = s[i1:i2]
+        result = ""
+        for i in range(len(s)+1):
+            for j in reversed(range(len(s))):
+                if s[i] != s[j] or j < i or (j-i) < longest:
+                    continue
+                sub = s[i:j+1]
                 if sub == sub[::-1] and len(sub) > longest:
+                    result = sub
                     longest = len(sub)
-                    results.append(sub)
-        if not results:
-            return "" 
-        return [i for i in results if len(i) >= longest][0]
+        return result
 
 if __name__ == "__main__":
     for ex in (
