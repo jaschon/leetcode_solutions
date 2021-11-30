@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
-#
-#
-#
+# https://leetcode.com/problems/spiral-matrix-ii/
+# 59. Spiral Matrix II
+# Accepted
+# https://leetcode.com/submissions/detail/591676834/
+# 52ms
+# 14.2 MB
 
 class Solution:
     def generateMatrix(self, n: int) -> list[list[int]]:
@@ -32,7 +35,6 @@ if __name__ == "__main__":
 
             ):
         result = Solution().generateMatrix(ex[0])
-        # print(ex[0], ex[1], result, "PASS" if result == ex[2] else "FAIL")
         print(ex[0], result, "PASS" if result == ex[1] else "FAIL")
 
 

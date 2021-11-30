@@ -3,6 +3,23 @@
 #
 #
 
+# Linked List Helpers
+# def load_node(vals=[], node=None):
+#     if vals:
+#         node = ListNode(vals.pop(0))
+#         if vals:
+#             node.next = load_node(vals, node)
+#     return node
+
+# def unload_node(node=None):
+#     results = []
+#     while node:
+#         results.append(node.val)
+#         node = node.next
+#     return results
+
+
+
 class Solution(object):
     def 
 
