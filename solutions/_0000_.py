@@ -19,6 +19,7 @@
 #     return results
 
 
+import timeit
 
 class Solution(object):
     def 
@@ -29,7 +30,11 @@ if __name__ == "__main__":
 
             ):
         result = Solution().
+        t = timeit.Timer(lambda: Solution(). )
+
         # print(ex[0], ex[1], result, "PASS" if result == ex[2] else "FAIL")
         print(ex[0], result, "PASS" if result == ex[1] else "FAIL")
+
+        print("TIMER", t.timeit(5))
 
 
