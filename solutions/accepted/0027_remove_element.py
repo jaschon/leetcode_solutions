@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # https://leetcode.com/problems/remove-element/
 # 27. Remove Element
+# Easy
 # Accepted!
 # https://leetcode.com/problems/remove-element/submissions/
 # 56ms (8.89%)

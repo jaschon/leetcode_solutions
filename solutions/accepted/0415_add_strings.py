@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # 415. Add Strings
+# Easy
 # https://leetcode.com/problems/add-strings/
 # Accepted
 # https://leetcode.com/submissions/detail/591160939/

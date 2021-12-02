@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # https://leetcode.com/problems/sqrtx/
 # 69. Sqrt(x)
+# Easy
 # Accepted
 # https://leetcode.com/submissions/detail/591684806/
 # 37ms (60.84%)

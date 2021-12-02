@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 # 15. 3Sum
+# Medium
 # https://leetcode.com/problems/3sum/
 # Accepted 6028ms (8.19%) (SLOOOOW)
 # 17.5 MB
+# https://leetcode.com/submissions/detail/595612212/
  
 import timeit
 

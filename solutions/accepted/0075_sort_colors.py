@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # 75. Sort Colors
 # https://leetcode.com/problems/sort-colors/
+# Medium
 # Accepted! (kind of slow)
 # https://leetcode.com/submissions/detail/591661454/
 # 53ms (7.33%)

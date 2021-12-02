@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # 28. Implement strStr()
 # https://leetcode.com/problems/implement-strstr/
+# Easy
 # Accepted!
 # 40ms (72.55%)
 # 14.6MB (33.38%)

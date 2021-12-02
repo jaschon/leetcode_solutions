@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # https://leetcode.com/problems/add-binary/
 # 67. Add Binary
+# Easy
 # Accepted
 # https://leetcode.com/submissions/detail/589726103/
 # 28ms (92.77%)

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # 387. First Unique Character in a String
 # https://leetcode.com/problems/first-unique-character-in-a-string/
+# Easy
 # Accepted!
 # 60ms (97.66%)
 # 14.6MB (21.25%)
