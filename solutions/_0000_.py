@@ -1,40 +1,29 @@
 #!/usr/bin/env python3
 #
 #
+# Easy
+# Accepted ?
 #
 
-# Linked List Helpers
-# def load_node(vals=[], node=None):
-#     if vals:
-#         node = ListNode(vals.pop(0))
-#         if vals:
-#             node.next = load_node(vals, node)
-#     return node
-
-# def unload_node(node=None):
-#     results = []
-#     while node:
-#         results.append(node.val)
-#         node = node.next
-#     return results
+import sys
+sys.path.insert(0,'..')
+from _helper import *
 
 
-import timeit
-
-class Solution(object):
-    def 
-
+class Solution:
+        
 
 if __name__ == "__main__":
-    for ex in (
+    for e in (
+
+            ([1,2,3,2], 4),
+            ([1,1,1,1,1], 0),
 
             ):
-        result = Solution().
-        t = timeit.Timer(lambda: Solution(). )
 
-        # print(ex[0], ex[1], result, "PASS" if result == ex[2] else "FAIL")
-        print(ex[0], result, "PASS" if result == ex[1] else "FAIL")
+        funct = Solution().
 
-        print("TIMER", t.timeit(5))
+        test(funct, e[1], e[0])
+        timer(funct, e[0])
 
-
+        print()
