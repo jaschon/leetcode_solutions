@@ -20,10 +20,12 @@ def unload_node(node=None):
 # Pass Fail
 def test(funct, cmp, *val):
     result = funct(*val)
-    print(val, result, "PASS" if result == cmp else f"FAIL -- {ex[1]}")
-
+    print("TEST:", "--OK--" if result == cmp else "--FAIL--")
+    print("IN:", val)
+    print("OUT:", result)
+    print("EXPECTED:", cmp)
 
 def timer(funct, *param):
     t = timeit.Timer(lambda: funct(*param))
-    print("TIMER", t.timeit(5))
+    print("TIMER:", t.timeit(5))
 

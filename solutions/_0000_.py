@@ -2,8 +2,11 @@
 #
 #
 # Easy
+
 # Accepted ?
-#
+# Result: 
+# Time:
+# Mem:
 
 import sys
 sys.path.insert(0,'..')
@@ -16,12 +19,12 @@ class Solution:
 if __name__ == "__main__":
     for e in (
 
-            ([1,2,3,2], 4),
-            ([1,1,1,1,1], 0),
 
             ):
 
         funct = Solution().
+
+        print()
 
         test(funct, e[1], e[0])
         timer(funct, e[0])
