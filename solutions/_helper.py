@@ -25,6 +25,7 @@ def unload_node(node=None):
 # Pass Fail
 def test(funct, cmp, *val):
     result = funct(*val)
+    print(f">> {funct.__qualname__} ({funct.__doc__ or '-'})")
     print("TEST:", "--OK--" if result == cmp else "--FAIL--")
     print("IN:", val)
     print("OUT:", result)
@@ -33,6 +34,7 @@ def test(funct, cmp, *val):
 def test_node(funct, cmp, val):
     val = load_node(val)
     result = unload_node(funct(val))
+    print(f">> {funct.__qualname__} ({funct.__doc__ or '-'})")
     print("TEST:", "--OK--" if result == cmp else "--FAIL--")
     print("IN:", val)
     print("OUT:", result)
@@ -41,3 +43,7 @@ def test_node(funct, cmp, val):
 def timer(funct, *param):
     t = timeit.Timer(lambda: funct(*param))
     print("TIMER:", t.timeit(5))
+
+def timer_amt(funct, amt, *param):
+    t = timeit.Timer(lambda: funct(*param))
+    print("TIMER {amt}:", t.timeit(amt))

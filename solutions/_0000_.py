@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-#
-#
+
+
+
 # Easy
 
-# Accepted ?
+# Accepted
 # Result: 
 # Time:
 # Mem:
@@ -13,20 +14,31 @@ sys.path.insert(0,'..')
 from _helper import *
 
 
-class Solution:
+### ADD SOLUTION CLASS HERE 
+
+
         
 
 if __name__ == "__main__":
-    for e in (
-
-
+    for f in ( 
+            ### ADD SOLUTION CLASS LIST HERE 
+            Solution().
             ):
+        for e in (
+                ### ADD TEST LIST HERE (INPUT, OUTPUT)
 
-        funct = Solution().
+                ):
 
-        print()
+            funct = f
+            print()
 
-        test(funct, e[1], e[0])
-        timer(funct, e[0])
+            ### ADD EXTRA PARAM AFTER e[0]...
+            test(funct, e[-1], e[0])
 
-        print()
+            ### NODE VERSION OF TEST
+            # test_node(funct, cmp, val)
+
+            timer(funct, e[0])
+            # timer_amt(funct, 10, e[0])
+
+            print()
