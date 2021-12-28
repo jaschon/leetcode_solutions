@@ -3,17 +3,16 @@
 # https://leetcode.com/problems/zigzag-conversion/
 # MEDIUM
 # Accepted!
-# https://leetcode.com/submissions/detail/589192803/
-# 472ms, 18mb
+# https://leetcode.com/submissions/detail/608176648/
+# 452ms, 18.1mb
 
 class Solution:
     def convert(self, s="", rows=1):
         if len(s) == 1 or rows == 1: return s
         x, y, down = 0, 0, True
-        s = list(list(zip(*s))[0])
         board = [["" for _ in range(int((len(s)/2)+.5))] for _ in range(rows)]
-        while s:
-            board[y][x] = s.pop(0)
+        for char in s:
+            board[y][x] = char
             if y == (rows-1):
                 down = False
             elif y == 0:
