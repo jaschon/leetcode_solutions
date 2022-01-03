@@ -9,6 +9,7 @@
 # Mem:
 
 import sys
+import inspect
 sys.path.insert(0,'..')
 from _helper import *
 from typing import List
@@ -17,10 +18,14 @@ from typing import List
 ### ADD SOLUTION CLASS HERE 
 
 
+
+
 if __name__ == "__main__":
     for f in ( 
             ### ADD SOLUTION CLASS LIST HERE 
-            Solution().  ,
+            Solution(),
+            # Solution2(),
+            # Solution3(),
             ):
         for e in (
                 ### ADD TEST LIST HERE (INPUT, OUTPUT)
@@ -28,16 +33,14 @@ if __name__ == "__main__":
 
                 ):
 
-            funct = f
+            funct = inspect.getmembers(f)[-1][1]
+
             print()
 
-            ### ADD EXTRA PARAM AFTER e[0]...
-            test(funct, e[-1], e[0])
+            # test_node(funct, e[-1], *e[:-1])
 
-            ### NODE VERSION OF TEST
-            # test_node(funct, cmp, val)
+            test(funct, e[-1], *e[:-1])
+            timer(funct, 5, *e[:-1])
 
-            # timer(funct, e[0])
-            # timer_amt(funct, 10, e[0])
 
             print()
