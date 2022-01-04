@@ -1,6 +1,9 @@
 
 /* 175. Combine Two Tables */
 /* https://leetcode.com/problems/combine-two-tables/ */
+
+/* Easy */
+/* https://leetcode.com/submissions/detail/612406025/ */
 /* 515ms (13.38%) */
 
 
