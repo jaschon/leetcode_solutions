@@ -60,13 +60,22 @@ class Solution2:
         return "".join(result)
 
 
+class Solution5:
+    def addSpaces(self, s: str, spaces: List[int]) -> str:
+        s = list(s)
+        for i, n in enumerate(spaces):
+            s[i] = " " + s[i]
+        return "".join(s)
+
+
 if __name__ == "__main__":
     for f in ( 
             ### ADD SOLUTION CLASS LIST HERE 
-            Solution(),
-            Solution2(),
+            # Solution(),
+            # Solution2(),
             Solution3(),
             Solution4(),
+            Solution5(),
             ):
         for e in (
                 ### ADD TEST LIST HERE (INPUT, OUTPUT)
