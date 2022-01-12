@@ -39,4 +39,4 @@ def test_node(funct, cmp, val):
 # Timer
 def timer(funct, amt, *param):
     t = timeit.Timer(lambda: funct(*param))
-    print(f"TIMER ({amt}x):", t.timeit(amt))
+    print(f"TIMER ({amt}x):", f"{t.timeit(amt)}")
