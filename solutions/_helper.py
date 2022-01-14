@@ -32,9 +32,7 @@ def test(funct, cmp, *val):
     print("EXPECTED:", cmp)
 
 def test_node(funct, cmp, val):
-    val = load_node(val)
-    result = unload_node(funct(val))
-    test(funct, cmp, val)
+    test(funct, cmp, load_node(val))
 
 # Timer
 def timer(funct, amt, *param):
