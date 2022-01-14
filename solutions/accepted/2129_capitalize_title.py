@@ -40,13 +40,25 @@ class Solution3:
     def capitalizeTitle(self, title: str) -> str:
         return " ".join([word.lower() if len(word) < 3 else word.title() for word in title.split()])
 
+class Solution4:
+    def capitalizeTitle(self, title: str) -> str:
+        
+        s = ""
+        for word in title.split():
+            if len(word) < 3:
+                s += word.lower() + " "
+            else:
+                word = word.lower()
+                s += chr(ord(word[0]) - 32) + word[1:] + " "
+                    
+        return s[:-1]
 
 if __name__ == "__main__":
     for f in ( 
             ### ADD SOLUTION CLASS LIST HERE 
-            # Solution(),
-            # Solution2(),
-            # Solution3(),
+            Solution(),
+            Solution2(),
+            Solution3(),
             Solution4(),
             ):
         for e in (
