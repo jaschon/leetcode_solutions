@@ -6,7 +6,7 @@ https://leetcode.com/problemset/all/
 
 ## Easy
 
-- 118/544
+- 121/544
 
 ## Medium
 
