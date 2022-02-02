@@ -5,8 +5,8 @@
 - https://leetcode.com/jaschon/
 ---
 - Easy 121/544
-- Medium 33/1151
+- Medium 34/1151
 - Hard 4/462
 
 ---
-### Total 158/2157
+### Total 159/2157
