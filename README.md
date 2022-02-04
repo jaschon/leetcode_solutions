@@ -4,9 +4,9 @@
 - https://leetcode.com/problemset/all/
 - https://leetcode.com/jaschon/
 ---
-- Easy 123/544
-- Medium 35/1151
+- Easy 125/543
+- Medium 37/1152
 - Hard 4/463
 
 ---
-### Total 162/2158
+### Total 166/2158
