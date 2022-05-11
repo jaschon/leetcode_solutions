@@ -5,9 +5,9 @@
 # Medium
 
 # Accepted
-# Result: 
-# Time:
-# Mem:
+# Result: https://leetcode.com/submissions/detail/653330021/
+# Time: 685ms (43.08%)
+# Mem: 15.3 MB (52.68%)
 
 import sys
 import inspect
